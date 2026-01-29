@@ -53,23 +53,23 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /theme_images/f.ico
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /theme_images/avatar.jpg
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
-# If the banner of page not setting, it will show the default_top_img
-default_top_img:
+# 如果(index/archive/tag等)页面的 banner 没有设置，它将显示 default_top_img (默认背景)
+default_top_img: /theme_images/default_top_img.jpg
 
-# The banner image of index page
-index_img:
+# The banner image of index page (首页背景)
+index_img: /theme_images/index_top_img.jpg
 
-# The banner image of archive page
-archive_img:
+# The banner image of archive page (归档页背景)
+archive_img: /theme_images/archive_top_img.jpg
 
 # Note: tag page, not tags page
 tag_img:
@@ -88,12 +88,13 @@ category_img:
 category_per_img:
 
 # The background image of footer
-footer_img: false
+footer_img: /theme_images/footer.jpg
 
 # Website Background
 # Can set it to color, image URL or an array containing colors and/or image URLs
 # If an array is provided, a random background will be selected from the array on each load
-background:
+# 全局背景色
+background: '#49b1f594'
 
 cover:
   # Disable the cover or not
@@ -165,6 +166,10 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 相信自己
+    - 今日事&#44;今日毕
+    - Never put off till tomorrow what you can do today
+    - I'm the best
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right

@@ -3,12 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: SaraのHexo记录
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Sara
+# language: en
+language: zh-CN
 timezone: ''
 
 # URL
