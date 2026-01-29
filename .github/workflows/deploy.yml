@@ -20,7 +20,7 @@ jobs:
       - name: 安装Node.js环境
         uses: actions/setup-node@v4  # 官方动作：配置 Node 环境
         with:
-          node-version: 18.x
+          node-version: 20.x
           cache: 'npm'
 
       - name: 安装Hexo及项目依赖
