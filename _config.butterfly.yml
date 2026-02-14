@@ -26,22 +26,25 @@ menu:
   说说: /shuoshuo/ || fas fa-link
 
 # --------------------------------------
-# Code Blocks Settings
+# Code Blocks Settings 代码块的设置
 # --------------------------------------
 
 code_blocks:
-  # Code block theme: darker / pale night / light / ocean / false
+  # 代码块主题: darker / pale night / light / ocean / false
   theme: darker
   macStyle: false
   # 代码块高度设置，超过高度出现展开按钮  数字或者false  (unit: px)
   height_limit: 230
-  word_wrap: false
+  word_wrap: false # 是否自动换行
 
-  # Toolbar
+  # Toolbar 代码块的工具
+  # 是否展示复制按钮
   copy: true
+  # 是否展示语言标签
   language: true
-  # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
+  # true: 收缩代码块 | false: 展开代码块 | none: 展开代码块并隐藏按钮
   shrink: false
+  # 是否全屏展示代码块
   fullpage: false
 
 # Social media links
@@ -61,8 +64,10 @@ avatar:
   img: /theme_images/avatar.jpg
   effect: false
 
-# Disable all banner images
+# 顶部图，如果如果不需要设置为true
 disable_top_img: false
+
+# 图片优先级：(.md文章内的)cover/top_img > index_img/archive_img/tag_img > default_top_img
 
 # 如果(index/archive/tag等)页面的 banner 没有设置，它将显示 default_top_img (默认背景)
 default_top_img: /theme_images/default_top_img.jpg
@@ -73,15 +78,15 @@ index_img: /theme_images/index_top_img.jpg
 # The banner image of archive page (归档页背景)
 archive_img: /theme_images/archive_top_img.jpg
 
-# Note: tag page, not tags page
+# Note: tag page, not tags page (标签页背景)
 tag_img:
 
-# The banner image of tag page, you can set the banner image for each tag
+# 标签页面的banner图片，您可以为每个标签设置横幅图片
 # Format:
 #  - tag name: xxxxx
 tag_per_img:
 
-# Note: category page, not categories page
+# Note: category page, not categories page (分类页背景)
 category_img:
 
 # The banner image of category page, you can set the banner image for each category
@@ -93,17 +98,17 @@ category_per_img:
 footer_img: /theme_images/footer.jpg
 
 # Website Background
-# Can set it to color, image URL or an array containing colors and/or image URLs
-# If an array is provided, a random background will be selected from the array on each load
-# 全局背景色
+# 全局背景图: color(纯色) | image(图片) 为空则背景留白
+# background: /theme_images/bg.jpg
+# background: 'linear-gradient(180deg, #B9D394 30%, #D2E3B9 100%)'
 background: '#49b1f594'
 
+# 封面是否显示
 cover:
-  # Disable the cover or not
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
-  # When cover is not set, the default cover is displayed
+  index_enable: true  # 首页是否展示文章封面
+  aside_enable: true  # aside的 "最新文章" 区域是否展示文章封面
+  archives_enable: true # 归档是否展示文章封面
+  # 当未设置封面cover时，将显示默认封面（可设置图片/颜色/渐变色）
   default_cover:
     # - xxx.jpg
 
@@ -118,6 +123,7 @@ error_404:
   subtitle: 'Page Not Found'
   background: /img/error-page.png
 
+# 页面的meta展示
 post_meta:
   # Home Page
   page:
@@ -140,47 +146,49 @@ post_meta:
     label: true
 
 # --------------------------------------
-# Index page settings
+# Index page settings (index_page 页面设置)
 # --------------------------------------
 
-# The top_img settings of home page
-# default: top img - full screen, site info - middle
-# The position of site info, eg: 300px/300em/300rem/10%
+# (home page)主页的顶部图片设置
+# # 默认设置：顶部图片 - 全屏显示，网站信息 - 居中显示
+# 网站信息的位置(距离顶部的距离), eg: 300px/300em/300rem/10%
 index_site_info_top:
-# The height of top_img, eg: 300px/300em/300rem
+# top_img 的高height, eg: 300px/300em/300rem
 index_top_img_height:
 
-# The subtitle on homepage
+# 主页上的副标题
 subtitle:
-  enable: false
-  # Typewriter Effect
+  enable: true
+  # Typewriter Effect (打字效果)
   effect: true
   # Customize typed.js
   # https://github.com/mattboldt/typed.js/#customization
   typed_option:
-  # Source - Call the third-party service API (Chinese only)
-  # It will show the source first, then show the content of sub
-  # Choose: false/1/2/3
-  # false - disable the function
-  # 1 - hitokoto.cn
-  # 2 - https://api.aa1.cn/doc/yiyan.html
-  # 3 - jinrishici.com
+
+  # 源 - 调用第三方服务API（仅限中文）
+  # subtitle它将首先展示源代码source，然后展示子内容sub
+  # 选择: false/1/2/3
+  # false - 禁用该功能
+  # 1 - 调用一言网的一句话（简体）hitokoto.cn
+  # 2 - 调用一句网（简体）https://api.aa1.cn/doc/yiyan.html
+  # 3 - 调用今日诗词（简体）jinrishici.com
   source: false
-  # If you close the typewriter effect, the subtitle will only show the first line of sub
+
+  # 如果关闭打字机效果，字幕将只显示子标题的第一行
   sub:
     - 相信自己
     - 今日事&#44;今日毕
     - Never put off till tomorrow what you can do today
     - I'm the best
 
-# Article layout on the homepage
-# 1: Cover on the left, info on the right
-# 2: Cover on the right, info on the left
-# 3: Cover and info alternate between left and right
-# 4: Cover on top, info on the bottom
-# 5: Info displayed on the cover
-# 6: Masonry layout - Cover on top, info on the bottom
-# 7: Masonry layout - Info displayed on the cover
+# 主页上的文章布局
+# 1：封面在左，信息在右
+# 2：封面在右，信息在左
+# 3：封面和信息在左右两侧交替显示
+# 4：封面在上，信息在下
+# 5：信息展示在封面上(封面为背景图)
+# 6：瀑布流布局 - 封面在上，信息在下
+# 7：瀑布流布局 - 信息展示在封面上(封面为背景图)
 index_layout: 3
 
 # Display the article introduction on homepage
@@ -208,12 +216,12 @@ toc:
 
 post_copyright:
   enable: true
-  decode: false
+  decode: true # 是否进行文章URL解码
   author_href:
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-# Sponsor/reward
+# 赞助商/奖励
 reward:
   enable: false
   text:
@@ -226,7 +234,7 @@ reward:
     #   text: alipay
 
 # Post edit
-# Easily browse and edit blog source code online.
+# 轻松在线浏览和编辑博客源代码
 post_edit:
   enable: false
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
@@ -241,10 +249,10 @@ related_post:
   # Choose: created / updated
   date_type: created
 
-# Choose: 1 / 2 / false
-# 1: The 'next post' will link to old post
-# 2: The 'next post' will link to new post
-# false: disable pagination
+# 选择: 1 / 2 / false （分页按钮）
+# 1: 下一篇是旧文章
+# 2: 下一篇是新文章
+# false: 关闭分页按钮
 post_pagination: 1
 
 # Displays outdated notice for a post
@@ -271,10 +279,10 @@ footer:
   copyright:
     enable: true
     version: true
-  custom_text:
+  custom_text: Hi, 欢迎来到我的 <a href="/">博客</a>
 
 # --------------------------------------
-# Aside Settings
+# Aside Settings （侧边栏设置）
 # --------------------------------------
 
 aside:
@@ -284,7 +292,7 @@ aside:
   button: true
   mobile: true
   # Position: left / right
-  position: right
+  position: right # 在左侧、右侧
   display:
     archive: true
     tag: true
@@ -325,8 +333,7 @@ aside:
     enable: true
     # If set 0 will show all
     limit: 40
-    color: false
-    custom_colors:
+    color: true # 标签的颜色
     # Order of tags, random/name/length
     orderby: random
     # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -368,12 +375,12 @@ aside:
 # The distance between the bottom right button and the bottom (default unit: px)
 rightside_bottom:
 
-# Conversion between Traditional and Simplified Chinese
+# 繁体中文与简体中文的转换
 translate:
   enable: false
   # The text of a button
-  default: 繁
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
+  default: 簡
+  # #网站默认语言，1:繁体中文，2:简体中文
   defaultEncoding: 2
   # Time delay
   translateDelay: 0
@@ -434,14 +441,14 @@ copy:
     enable: false
     limit_count: 150
 
-# Need to install the hexo-wordcount plugin
+# 需要安装hexo-wordcount插件
 wordcount:
   enable: false
-  # Display the word count of the article in post meta
+  # 在文章页面的meta上显示字数
   post_wordcount: true
-  # Display the time to read the article in post meta
+  # 在文章页面的meta上显示阅读时间
   min2read: true
-  # Display the total word count of the website in aside's webinfo
+  # 在aside的webinfo中显示网站的总字数
   total_wordcount: true
 
 # Busuanzi count for PV / UV in site
@@ -491,18 +498,17 @@ search:
 
   # Local Search
   local_search:
-    # Preload the search data when the page loads.
+    enable: false
+    # 在页面加载时预加载搜索数据
     preload: false
-    # Show top n results per article, show all results by setting to -1
+    # 显示每篇文章的前 n 个结果，设置为 -1 则显示所有结果
     top_n_per_article: 1
-    # Unescape html strings to the readable one.
+    # 将 html 字符串取消转义，使其变为可读的字符串。
     unescape: false
-    # Enable pagination for search results
-    pagination:
-      enable: false
-      # Number of search results per page
-      hitsPerPage: 8
-    CDN:
+
+    # 搜索库CDN（默认使用本地）
+    # js: https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.min.js
+    CDN: 
 
   # Docsearch
   # https://docsearch.algolia.com/
@@ -524,12 +530,12 @@ share:
   # Share.js
   # https://github.com/overtrue/share.js
   sharejs:
-    sites: facebook,x,wechat,weibo,qq
+    sites: facebook,twitter,wechat,weibo,qq
 
   # AddToAny
   # https://www.addtoany.com/
   addtoany:
-    item: facebook,x,wechat,sina_weibo,facebook_messenger,email,copy_link
+    item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
 
 # --------------------------------------
 # Comments System
