@@ -12,7 +12,7 @@ author: Sara
 language: zh-CN
 timezone: ''
 
-# URL
+# URL (文章链接)
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://liqinghua-ty.github.io/
 permalink: :year/:month/:day/:title/
@@ -32,6 +32,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
+# new_post_name: :title.md # File name of new posts
 new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
@@ -97,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: butterfly   # hexo默认主题是landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -105,3 +106,20 @@ deploy:
   type: git
   repository: git@github.com:liqinghua-ty/liqinghua-ty.github.io.git
   branch: main
+
+live2d:
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  use: live2d-widget-model-hibiki  # 模型名称
+  display:
+    position: left # 左右位置（left/right）
+    width: 230      # 宽度
+    height: 370     # 高度
+    hOffset: 50     # 水平偏移（px）
+    vOffset: 0    # 垂直偏移（px，负数向上移动）
+    zIndex: 100     # 层级
+  mobile:
+    show: false      # 移动端是否显示
+    scale: 0.5      # 移动端缩放比例
